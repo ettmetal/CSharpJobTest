@@ -7,8 +7,10 @@ namespace com.brainplus.jobtest
     /// Change <see cref="MultipleCoroutinesInSequence"/> so that it starts the 3 
     /// <see cref="RandomDuration"/> coroutines sequentially (only 1 of the 3 runs at any point in time).
     /// </summary>
-    public class Coroutines_Scenario2 : MonoBehaviour
+    public class Coroutines_Scenario2 : JobTestMonoBehaviour
     {
+        public override string Instructions => "Change MultipleCoroutinesInSequence so that it starts the 3 RandomDuration coroutines sequentially (only 1 of the 3 runs at any point in time).";
+
         /// <summary>
         /// You are not allowed to change this function.
         /// </summary>

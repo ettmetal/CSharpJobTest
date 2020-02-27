@@ -6,8 +6,10 @@ namespace com.brainplus.jobtest
     /// Change the <see cref="Health"/> class, so that its important internal variables cannot be
     /// changed directly from the outside, but instead must use the <see cref="Health.TakeDamage(int)"/> function.
     /// </summary>
-    public class Serialization_Scenario1 : MonoBehaviour
+    public class Serialization_Scenario1 : JobTestMonoBehaviour
     {
+        public override string Instructions => "Change the Health class, so that its important internal variables cannot be changed directly from the outside, but instead must use the Health.TakeDamage(int) function.";
+
         public Health health;
 
         /// <summary>

@@ -6,8 +6,11 @@ namespace com.brainplus.jobtest
     /// Fix the <see cref="System.NullReferenceException"/> that occurs in <see cref="SpawnPlayer"/> without
     /// changing the <see cref="SpawnPlayer"/> function.
     /// </summary>
-    public class MonoBehaviour_Scenario1 : MonoBehaviour
+    
+    public class MonoBehaviour_Scenario1 : JobTestMonoBehaviour
     {
+        public override string Instructions => "Fix the NullReferenceException that occurs in SpawnPlayer without changing the SpawnPlayer function.";
+
         public Player playerPrefab;
 
         /// <summary>

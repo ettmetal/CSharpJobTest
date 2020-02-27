@@ -7,8 +7,10 @@ namespace com.brainplus.jobtest
     /// Change <see cref="MultipleCoroutinesInParallel"/> so that it calls <see cref="Finish"/>
     /// after the 3 <see cref="RandomDuration"/> coroutines end.
     /// </summary>
-    public class Coroutines_Scenario3 : MonoBehaviour
+    public class Coroutines_Scenario3 : JobTestMonoBehaviour
     {
+        public override string Instructions => "Change MultipleCoroutinesInParallel so that it calls Finish after the 3 RandomDuration coroutines end.";
+
         /// <summary>
         /// You are not allowed to change this function.
         /// </summary>
