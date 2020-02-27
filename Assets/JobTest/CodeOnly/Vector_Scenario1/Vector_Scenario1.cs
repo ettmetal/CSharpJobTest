@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace com.brainplus.jobtest
+namespace com.brainplus.jobtest.vector.scenario1
 {
     /// <summary>
     /// Optimize the distance check for finding points close to the center in the <see cref="CountPositionsCloseToCenter"/> function.

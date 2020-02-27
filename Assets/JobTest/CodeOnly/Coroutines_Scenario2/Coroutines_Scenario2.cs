@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace com.brainplus.jobtest
+namespace com.brainplus.jobtest.coroutines.scenario2
 {
     /// <summary>
     /// Change <see cref="MultipleCoroutinesInSequence"/> so that it starts the 3 

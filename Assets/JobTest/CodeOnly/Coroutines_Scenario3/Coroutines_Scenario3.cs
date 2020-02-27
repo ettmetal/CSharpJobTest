@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace com.brainplus.jobtest
+namespace com.brainplus.jobtest.coroutines.scenario3
 {
     /// <summary>
     /// Change <see cref="MultipleCoroutinesInParallel"/> so that it calls <see cref="Finish"/>

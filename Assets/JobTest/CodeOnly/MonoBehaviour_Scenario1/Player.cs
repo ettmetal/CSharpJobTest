@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace com.brainplus.jobtest
+namespace com.brainplus.jobtest.monobehaviour.scenario1
 {
     [RequireComponent(typeof(Inventory))]
     public class Player : MonoBehaviour

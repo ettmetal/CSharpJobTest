@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace com.brainplus.jobtest
+namespace com.brainplus.jobtest.monobehaviour.scenario1
 {
     /// <summary>
     /// You are not allowed to change this class.

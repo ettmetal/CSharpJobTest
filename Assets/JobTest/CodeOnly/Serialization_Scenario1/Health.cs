@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace com.brainplus.jobtest
+namespace com.brainplus.jobtest.serialization.scenario1
 {
     public class Health : MonoBehaviour
     {

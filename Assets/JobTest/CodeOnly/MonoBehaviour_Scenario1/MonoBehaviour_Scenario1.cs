@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace com.brainplus.jobtest
+namespace com.brainplus.jobtest.monobehaviour.scenario1
 {
     /// <summary>
     /// Fix the <see cref="System.NullReferenceException"/> that occurs in <see cref="SpawnPlayer"/> without

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace com.brainplus.jobtest
+namespace com.brainplus.jobtest.coroutines.scenario1
 {
     /// <summary>
     /// Using a coroutine, call <see cref="Finish"/> after 3 seconds using <see cref="WaitForSeconds"/>.

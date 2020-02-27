@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace com.brainplus.jobtest
+namespace com.brainplus.jobtest.serialization.scenario1
 {
     /// <summary>
     /// Change the <see cref="Health"/> class, so that its important internal variables cannot be
