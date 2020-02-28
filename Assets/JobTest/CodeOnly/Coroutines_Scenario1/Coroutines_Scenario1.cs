@@ -5,11 +5,11 @@ namespace com.brainplus.jobtest.coroutines.scenario1
 {
     /// <summary>
     /// Using a coroutine, call <see cref="Finish"/> after 3 seconds using <see cref="WaitForSeconds"/>.
-    /// You are not allowed to use the <see cref="Time"/> or <see cref="System.DateTime"/>.
+    /// You are not allowed to use the <see cref="Time"/> or <see cref="System.DateTime"/> classes.
     /// </summary>
     public class Coroutines_Scenario1 : JobTestMonoBehaviour
     {
-        public override string Instructions => "Using a coroutine, call Finish after 3 seconds using WaitForSeconds. You are not allowed to use the Time or DateTime.";
+        public override string Instructions => "Using a coroutine, call Finish after 3 seconds using WaitForSeconds. You are not allowed to use the Time or DateTime classes.";
 
         void Start()
         {
