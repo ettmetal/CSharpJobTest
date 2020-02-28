@@ -49,8 +49,8 @@ namespace com.brainplus.jobtest.editor
         [MenuItem(MENU_ITEM)]
         public static void OpenWindow()
         {
-            WelcomeWindow instance = GetWindow<WelcomeWindow>(true, "Welcome", true);
-            instance.minSize = new Vector2(400f, 600f);
+            System.Type inspectorWindowType = typeof(Editor).Assembly.GetType("UnityEditor.InspectorWindow");
+            GetWindow<WelcomeWindow>("Welcome", true, inspectorWindowType);
         }
 
         Vector2 scrollPosition = Vector2.zero;
