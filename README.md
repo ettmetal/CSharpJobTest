@@ -1,3 +1,5 @@
+![](.github/SocialMediaPreview.png)
+
 # Brain+ Unity Developer Job Test
 Thank you for showing an interest in taking our Unity Developer job test!
 
