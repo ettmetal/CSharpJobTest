@@ -25,10 +25,8 @@ namespace com.brainplus.jobtest.coroutines.scenario2
             // You are not allowed to remove the for loop
             for (int i = 0; i < 3; i++)
             {
-                StartCoroutine(RandomDuration()); // TODO: Dont start next coroutine until this one ends
+                yield return StartCoroutine(RandomDuration()); // Coroutines implement IEnumerator, they yield until finished
             }
-
-            yield break; // REMOVE ME: This line is only here to make the incomplete code compile
         }
 
         /// <summary>
