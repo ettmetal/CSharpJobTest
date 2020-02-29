@@ -22,7 +22,7 @@ namespace com.brainplus.jobtest.serialization.scenario1
 
         void KillPlayer()
         {
-            health.currentHealth = 0; // TODO: Prevent changing currentHealth like this
+            // health.currentHealth = 0; // TODO: Prevent changing currentHealth like this
             health.TakeDamage(health.currentHealth); // TODO: But allow reading currentHealth like this
         }
     }
