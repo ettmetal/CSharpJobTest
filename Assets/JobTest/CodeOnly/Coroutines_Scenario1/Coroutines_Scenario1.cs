@@ -13,7 +13,7 @@ namespace com.brainplus.jobtest.coroutines.scenario1
 
         void Start()
         {
-            Finish(); // TODO: Call after 3 second delay
+            StartCoroutine(DelayedFinish(3f)); // It'd be cleaner to use a member to avoid magic numbers, it can also make the delay configurable
         }
 
         /// <summary>
@@ -23,5 +23,18 @@ namespace com.brainplus.jobtest.coroutines.scenario1
         {
             Debug.Log($"Finish: {this.name}");
         }
+
+        // Encapsulate the Finish() call into a coroutine which delays for a given number of seconds.
+        IEnumerator DelayedFinish(float delay) {
+            yield return new WaitForSeconds(delay); // Could be WaitForSecondsRealtime to avoid scaling, if needed
+            Finish();
+        }
+
+        // If this was a general need across a project, I'd probably propose somthing like this instead:
+        IEnumerator DelayedCall(float delay, System.Action call) {
+            yield return new WaitForSeconds(delay); // Again, this parameter could be refactored to be a member, making it configurable
+            call?.Invoke();
+        }
+        // Usage: StartCoroutine(DelayedCall(3f, Finish));
     }
 }
