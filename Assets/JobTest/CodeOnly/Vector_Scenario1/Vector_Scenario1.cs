@@ -55,11 +55,13 @@ namespace com.brainplus.jobtest.vector.scenario1
             Vector3 center = Vector3.zero; // Optimization: Cache to avoid property accessor
             int countTotal = positions.Count; // Optimization: Cache to heap to avoid property accessor
 
+            float sqrThreshold = distanceThreshold * distanceThreshold; // Cache this to aviod a mul each interation; less optimisation, more neat
+
             int countClose = 0;
             for (int i = 0; i < countTotal; i++)
             {
                 // Check if close to center
-                if (Vector3.Distance(center, positions[i]) <= distanceThreshold) // TODO: Optimize distance check
+                if ((center - positions[i]).sqrMagnitude <= sqrThreshold) // Compare squares to avoid costly sqrt call (used by Vector3.magnitude, which is used by Vector3.Distance). This will be more apprent on mobile devices
                 {
                     countClose++;
                 }
