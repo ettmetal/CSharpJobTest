@@ -19,10 +19,8 @@ namespace com.brainplus
             waitDuration = Random.Range(1f, 10f);
         }
 
-        void Update()
-        {
-            TickCounter();
-        }
+        // Removed Update() as TickCounter is now called elsewhere.
+        // Apart from the unmodifiable Awake (which could be handled by a constructor), this class has no reason to be a MonoBehaviour anymore, which would provide it's own savings (no native object that it's tied to etc.)
 
         /// <summary>
         /// You are not allowed to change this function.
