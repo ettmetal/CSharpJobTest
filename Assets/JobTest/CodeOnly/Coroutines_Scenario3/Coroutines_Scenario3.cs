@@ -21,16 +21,33 @@ namespace com.brainplus.jobtest.coroutines.scenario3
 
         IEnumerator MultipleCoroutinesInParallel()
         {
+            int coroutineCount = 3; // Hoist the magic number
+            Coroutine[] routines = new Coroutine[coroutineCount];
             // Start the 3 coroutines in parallel simultaneously
             // You are not allowed to remove the for loop
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < coroutineCount; i++)
             {
-                StartCoroutine(RandomDuration());
+                routines[i] = StartCoroutine(RandomDuration());
             }
+            foreach(Coroutine routine in routines) yield return routine; // Move the yield return of the coroutine so that the all get started in parallel
+            Finish();
+        }
 
-            Finish(); // TODO: Call when all 3 coroutines have ended
+        // An alternative that uses a callback approach, perhaps more scabalble at the expense of using anonymous functions
+        IEnumerator MultipleCoroutinesInParallelAlt(int coroutinesToSpawn) {
+            int completeCount = 0;
+            System.Action coroutineCompleteAction = () => completeCount++;
+            for(int i = 0; i < coroutinesToSpawn; i++) {
+                StartCoroutine(CoroutineCompletionWrapper(RandomDuration, coroutineCompleteAction));
+            }
+            yield return new WaitUntil(() => completeCount == coroutinesToSpawn);
+            Finish();
+        }
 
-            yield break; // REMOVE ME: This line is only here to make the incomplete code compile
+        // Helper function for MultipleCoroutinesInParallelAlt to create a coroutine that will callback when finished
+        IEnumerator CoroutineCompletionWrapper(System.Func<IEnumerator> routineCreator, System.Action callback) {
+            yield return routineCreator?.Invoke();
+            callback?.Invoke();
         }
 
         /// <summary>
